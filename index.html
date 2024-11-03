@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF to Text Extractor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>PDF Insight & Data Visualizer</h1>
+<p>Extracts names and ages from PDF documents to determine the most represented age groups. It analyzes word frequency and generates visualizations, allowing users to download both the extracted text and graphs as PDFs for deeper insights.</p>
+
+    <div class="pdfwork">
+        <span>Select PDF</span>
+        <input type="file" class="selectpdf">
+        <span>Password :</span>
+        <input type="password" class="pwd" placeholder="optional">
+        <button class="upload">Upload</button>
+        <div class="afterupload" style="display:none;">
+            <span>Select Page</span>
+            <select class="selectpage" onchange="afterProcess()"></select>
+            <a href="" class="download" download>Download Pdf Text</a>
+            <textarea class="pdftext"></textarea>
+            <canvas id="wordFrequencyChart" width="400" height="200"></canvas>
+            <button onclick="downloadChartAsPDF()">Download Chart as PDF</button>
+        </div>
+    </div>
+    <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.7.76/pdf.min.mjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
